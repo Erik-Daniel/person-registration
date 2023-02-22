@@ -21,7 +21,7 @@ public class PersonDao {
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		try { 
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/people?useSSL=false", "root", "");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/people?useSSL=false", "root", "password");
 			System.out.println("database connected");	
 			PreparedStatement prepState = connection.prepareStatement(INSERT_PERSON_SQL);
 			prepState.setString(1, person.getName());
@@ -31,7 +31,7 @@ public class PersonDao {
 			
 			result = prepState.executeUpdate();
 			
-			System.out.println(prepState);
+			
 			
 		}
 		catch (SQLException e) {
